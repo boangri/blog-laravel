@@ -1,56 +1,38 @@
-<html>
-	<head>
-		<title>Laravel</title>
-		
-		<link href='//fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
+@extends('layouts.site')
 
-		<style>
-			body {
-				margin: 0;
-				padding: 0;
-				width: 100%;
-				height: 100%;
-				color: #B0BEC5;
-				display: table;
-				font-weight: 100;
-				font-family: 'Lato';
-			}
 
-			.container {
-				text-align: center;
-				display: table-cell;
-				vertical-align: middle;
-			}
+@section('content')
+<!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Hello, world!</h1>
+        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+      </div>
+    </div>
 
-			.content {
-				text-align: center;
-				display: inline-block;
-			}
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+      
+      
+      @foreach($articles as $article)
+      	
+      	<div class="col-md-4">
+          <h2>{{ $article->title }}</h2>
+          <p>{!! $article->desc !!}</p>
+          <p><a class="btn btn-default" href="#" role="button">Подробнее &raquo;</a></p>
+        </div>
+      	
+      @endforeach
+      
+      </div>
 
-			.title {
-				font-size: 96px;
-				margin-bottom: 40px;
-			}
+      <hr>
 
-			.quote {
-				font-size: 24px;
-			}
-		</style>
-	</head>
-	<body>
-		<div class="container">
-			<div class="content">
-				<div class="title">{{ $header }}</div>
-				<div class="title">{{ $message }}</div>
-
-				@foreach($articles	as $article)
-					<div class="">
-						<h2>{{ $article->title }}</h2>
-						<p> {!!   $article->desc !!}</p>
-					</div>
-				@endforeach
-				<div class="quote">{{ Inspiring::quote() }}</div>
-			</div>
-		</div>
-	</body>
-</html>
+      <footer>
+        <p>&copy; 2016 Company, Inc.</p>
+      </footer>
+    </div> <!-- /container -->
+    
+@endsection    

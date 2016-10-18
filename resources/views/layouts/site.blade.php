@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 
-    <title>Jumbotron Template for Bootstrap</title>
+    <title>blade</title>
 
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/jumbotron.css') }}" rel="stylesheet">
